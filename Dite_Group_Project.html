@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>مخطط الحياة الصحية</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="logo">مخطط الحياة الصحية</div>
+      <nav class="nav">
+        <a href="#home">الرئيسية</a>
+        <a href="#water">شرب الماء</a>
+        <a href="#habits">العادات</a>
+        <a href="#meal">وجبة اليوم</a>
+        <a href="#contact">تواصل</a>
+        <button id="themeToggle" aria-label="تبديل الثيم">🌙</button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section id="home" class="hero">
+      <div class="container hero-grid">
+        <div class="hero-text">
+          <h1>نظّم يومك الصحي بسهولة</h1>
+          <p>تعقب شرب الماء، أكمل عاداتك اليومية، واحصل على اقتراح وجبة عشوائية — كلّها هنا.</p>
+          <a class="btn" href="#water">ابدأ الآن</a>
+        </div>
+        <div class="hero-image">
+          <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=0a1c6d57d72d0f4f6f3aee2d2b8a1a5e" alt="Healthy lifestyle" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Water Tracker -->
+    <section id="water" class="container water-section">
+      <h2>تعقب شرب الماء</h2>
+      <p>اضغط على الأكواب لتعلم أنها شُربت — يتم حفظ التقدّم محلياً.</p>
+      <div class="cups" id="cupsContainer" aria-label="أكواب الماء"></div>
+      <div class="water-controls">
+        <label for="dailyCups">عدد الأكواب اليومية:</label>
+        <input id="dailyCups" type="number" min="1" max="20" value="8" />
+        <button id="setCups" class="btn">تطبيق</button>
+        <button id="resetCups" class="btn ghost">إعادة ضبط</button>
+      </div>
+    </section>
+
+    <!-- Habits -->
+    <section id="habits" class="container habits-section">
+      <h2>العادات اليومية</h2>
+      <p>اضغط لإكمال عادة — ستُحفظ الحالة حتى لو عدت لاحقًا.</p>
+      <div class="habits-grid" id="habitsContainer"></div>
+      <form id="addHabitForm" class="habit-form">
+        <input id="habitName" placeholder="اسم العادة الجديدة (مثال: قراءة 20 صفحة)" required />
+        <button class="btn" type="submit">أضف عادة</button>
+      </form>
+    </section>
+
+    <!-- Meal of the Day -->
+    <section id="meal" class="container meal-section">
+      <h2>وجبة اليوم</h2>
+      <div class="meal-card" id="mealCard">
+        <img id="mealImg" src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=2b9d1b9c0a6a9d68f8b4a91d5b5b8b3d" alt="Meal" />
+        <div class="meal-body">
+          <h3 id="mealTitle">وجبة صحية</h3>
+          <p id="mealDesc">اضغط زر "وجبة جديدة" لعرض وصفة عشوائية وصحية.</p>
+          <div class="meal-actions">
+            <button id="newMeal" class="btn">وجبة جديدة</button>
+            <button id="favoriteMeal" class="btn ghost">♡ حفظ كمفضلة</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="container contact">
+      <h2>تواصل معنا</h2>
+      <form id="contactForm" novalidate>
+        <div class="form-row">
+          <label for="name">الاسم</label>
+          <input id="name" name="name" type="text" required minlength="2" />
+        </div>
+        <div class="form-row">
+          <label for="email">الإيميل</label>
+          <input id="email" name="email" type="email" required />
+        </div>
+        <div class="form-row">
+          <label for="message">الرسالة</label>
+          <textarea id="message" name="message" required minlength="10"></textarea>
+        </div>
+        <div class="form-row">
+          <button type="submit" class="btn">إرسال</button>
+        </div>
+        <p id="formFeedback" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">© <span id="year"></span> مخطط الحياة الصحية — جميع الحقوق</div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
